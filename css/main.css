@@ -34,11 +34,12 @@ body {
     font-family: var(--para-font);
     font-weight: 400;
     line-height: 1.35;
-    color: #000000;
 }
 
 p {
     margin-bottom: 1rem;
+    line-height: 1.75rem;
+    color: var(--para-text);
 }
 
 h1,
@@ -49,7 +50,8 @@ h5 {
     margin: 3rem 0 1.38rem;
     font-family: var(--heading-font);
     font-weight: 400;
-    line-height: 1.3;
+    color: var(--heading-color);
+    line-height: 1.75;
 }
 
 h1 {
@@ -83,10 +85,11 @@ small,
 
 /*nav starts*/
 nav{
-   
+   width: 100%;
     background-color: var(--section-bg-color);
     box-shadow: var(--lightShadow);
-    /* z-index: 2; */
+    position: fixed;
+    z-index: 2;
    
 }
 .nav-logo{
@@ -102,7 +105,7 @@ nav{
     justify-content: space-between;
 }
 
-.logo .back{
+ .back{
     color: var(--btn-bg-color);
     font-family: 'Oregano', 'sans-serif';
 }
@@ -110,7 +113,7 @@ nav{
 .nav-logo{
     font-size: 2.5rem;
 }
-.logo .roads {
+ .roads {
     color: black;
     font-family: 'Oregano', 'sans-serif';
 }
@@ -127,8 +130,13 @@ nav{
     transition: var(--transition);
 }
 
-.nav-link:hover{
-    cursor: pointer;
+.nav-link a {
+    color: var(--para-text);
+    text-decoration: none;
+    transition: var(--transition);
+}
+.nav-link a:hover{
+cursor: pointer;
     color: var(--btn-bg-color);
 }
 
@@ -216,8 +224,9 @@ transition: var(--transition);
 
 /*Page starts*/
 .page{
-    min-height: calc(100vh - 80px);
-    background: linear-gradient(255deg, rgba(255,142,60,0.5), rgba(255, 142, 60, 0.7)), url('../img/Background-img.jpg') no-repeat center center / cover;
+    padding-top: 5rem;
+    height: 100vh;
+    background: linear-gradient(225deg, rgba(255,142,60,0.5), rgba(255, 142, 60, 0.8)), url('../img/pexels-pixabay-158441.jpg') no-repeat center center / cover;
     /* background: url('../img/Background-img.jpg') no-repeat center center / cover; */
     display: flex;
     flex-direction: column;
@@ -236,6 +245,9 @@ transition: var(--transition);
     max-width: 50vw;
     text-align: center;
     font-size: 1.2rem;
+    color: #0d0d0d;
+    margin-bottom: 2.5rem;
+    margin-top: 0;
 }
 
 .explore-btn{
@@ -249,6 +261,7 @@ transition: var(--transition);
         text-transform: uppercase;
         font-size: 1.5rem;
         font-family: 'Oregano', 'sans-serif';
+        box-shadow: var(--lightShadow);
 }
 
 .explore-btn:hover{
@@ -256,3 +269,102 @@ transition: var(--transition);
     transform: scale(1.05);
     cursor: pointer;
 }
+
+
+/*About Us*/
+
+
+.about-center{
+    width: 90vw;
+    margin: auto;
+}
+
+.heading{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.about-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.img-container{
+    height: 21rem;
+    width: 37rem;
+    /* background-color: red; */
+  
+    position: relative;
+}
+
+.img-container::before{
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: -1.5rem;
+    left: -2.7rem;
+    width: 100%;
+    height: 100%;
+    border: 0.25rem solid var(--btn-bg-color);
+        border-radius: 0.5rem;
+        z-index: -3;
+}
+
+.about-details{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+.about-details h2{
+margin-bottom: 0;
+}
+
+.read-more-btn{
+    margin-top: 1.5rem;
+    width: 9rem;
+    height: 3rem;
+    background-color: var(--btn-bg-color);
+    padding: 0.2rem 1rem;
+        border: none;
+        border-radius: 0.3rem;
+        transition: var(--transition);
+        color: black;
+        text-transform: uppercase;
+        box-shadow: var(--lightShadow);
+}
+
+.read-more-btn:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+   
+}
+
+@media screen and (max-width: 1100px){
+.about-container{
+    /* width: 80vw; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img-container::before{
+    border: none;
+}
+.about-details h2{
+    margin-top: 1.5rem;
+}
+}
+
