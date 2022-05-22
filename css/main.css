@@ -226,7 +226,7 @@ transition: var(--transition);
 
 /*Page starts*/
 .page{
-    padding-top: 9rem;
+    padding-top: 7rem;
     height: 100vh;
     background: linear-gradient(225deg, rgba(255,142,60,0.5), rgba(255, 142, 60, 0.8)), url('../img/pexels-pixabay-158441.jpg') no-repeat center center / cover;
     /* background: url('../img/Background-img.jpg') no-repeat center center / cover; */
@@ -275,6 +275,9 @@ transition: var(--transition);
 
 /*About Us*/
 
+.about-us{
+    background-color: var(--section-bg-color);
+}
 
 .section-center{
     width: 90vw;
@@ -282,7 +285,7 @@ transition: var(--transition);
 }
 
 .heading{
-    margin-top: 6rem;
+    padding-top: 4rem;
     margin-bottom: 3rem;
     font-size: 3.5rem;
     text-align: center;
@@ -301,7 +304,7 @@ transition: var(--transition);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 4rem;
-    margin-bottom: 3rem;
+    padding-bottom: 4rem;
 }
 
 .img-container{
@@ -372,9 +375,13 @@ margin-bottom: 0;
 }
 
 /*Services*/
+.our-services{
+background-color: var(--bg-color);
+}
+
 
 .services{
-    margin-top: 4rem;
+    /* margin: 2rem 0; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
@@ -383,6 +390,7 @@ margin-bottom: 0;
 .service{
     display: grid;
     grid-template-columns: 25% 75%;
+    padding-bottom: 4rem;
 }
 .service i{
 font-size: 2rem;
@@ -417,4 +425,87 @@ font-size: 2rem;
 .service-details{
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width: 1100px){
+    .services{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) ;
+        column-gap: 1.5rem;
+    }
+    .service{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .service-details{
+        margin-top: 2rem;
+    }
+    .service-heading{
+        text-align: center;
+    }
+        .service-details p{
+            text-align: center;
+        }
+
+}
+
+/*Featured tours starts*/
+
+.featured-tours{
+    height: 200vh;
+    background-color: var(--section-bg-color);
+}
+
+.featured-tours-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+}
+
+.featured-card{
+    width: 20rem;
+    border-radius: 0.5rem;
+    height: 27rem;
+
+    transition: var(--transition);
+    background-color: var(--bg-color);
+}
+.featured-card:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+    box-shadow: var(--lightShadow);
+}
+.card-details{
+    padding: 1rem;
+}
+
+.card-heading h2{
+    margin: 0;
+    font-size: 1.7rem;
+}
+
+.details p{
+    font-size: 0.95rem;
+    color: var(--para-text);
+}
+
+.tour-info{
+    display: flex;
+    color: #ff8e3c;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1100px){
+    .featured-tours-grid{
+        display: flex;
+        flex-direction: column;
+    }
+    .featured-card{
+        width: 90%;
+        margin: auto;
+        height: 35rem;
+    }
 }
