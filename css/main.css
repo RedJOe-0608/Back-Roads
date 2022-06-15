@@ -161,10 +161,13 @@ display: flex;
     list-style: none;
     font-size: 1.2rem;
     margin-left: 1.2rem;
-    transition: var(--transition);
+}
+.social-icon-link a{
+    transition:  var(--transition);
+    color: var(--btn-text);
 }
 
-.social-icon-link:hover{
+.social-icon-link a:hover{
     color: var(--btn-bg-color);
     cursor: pointer;
 }
@@ -475,9 +478,8 @@ font-size: 2rem;
 }
 
 .featured-card{
-    width: 20rem;
     border-radius: 0.5rem;
-    height: 27rem;
+    
     margin-bottom: 4rem;
 
     transition: var(--transition);
@@ -508,16 +510,13 @@ font-size: 2rem;
     justify-content: space-between;
 }
 
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 870px){
     .featured-tours-grid{
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
     }
-    .featured-card{
-        width: 90%;
-        margin: auto;
-        height: 35rem;
-    }
+   
 }
 
 
@@ -554,7 +553,7 @@ font-size: 2rem;
     flex-direction: column;
 }
 .text{
-        width: 35rem;
+        max-width: 35rem;
             height: 3rem;
             padding: 0.5rem 1rem;
             margin-bottom: 1.2rem;
@@ -615,7 +614,7 @@ font-size: 2rem;
     }
 
     .footer-center{
-        width: 50vw;
+        max-width: 32rem;
         margin: auto;
       
     }
@@ -624,6 +623,7 @@ font-size: 2rem;
         padding-top: 4rem;
         list-style: none;
         display: flex;
+        padding-left: 0;
         justify-content: space-between;
     }
 
@@ -648,9 +648,13 @@ font-size: 2rem;
         }
                  .footer-icon-link{
                      padding: 1rem;
+                    }
+                    .footer-icon-link a{
                      transition: var(--transition);
+                     color: black;
+
                  }
-                .footer-icon-link:hover{
+                .footer-icon-link a:hover{
                     color: var(--section-bg-color);
                         cursor: pointer;
                 }
