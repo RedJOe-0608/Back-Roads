@@ -5,6 +5,13 @@ html {
     font-size: 100%;
 }/*16px*/
 
+html,
+body {
+    overflow-x: hidden;
+    /*Fixes the white space while making website responsive*/
+
+}
+
 :root{
 /*CSS variables*/
 scroll-behavior: smooth;
@@ -135,6 +142,8 @@ nav{
     color: var(--para-text);
     text-decoration: none;
     transition: var(--transition);
+    display: block;
+    width: 100%;
 }
 .nav-link a:hover{
 cursor: pointer;
@@ -240,6 +249,7 @@ transition: var(--transition);
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 4rem;
+    text-align: center;
     color: var(--section-bg-color);
 }
 
@@ -271,7 +281,6 @@ transition: var(--transition);
     transform: scale(1.05);
     cursor: pointer;
 }
-
 
 /*About Us*/
 
